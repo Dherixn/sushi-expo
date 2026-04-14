@@ -4,8 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sushi Expo Mairena — Experiencia japonesa auténtica en Mairena del Aljarafe">
-  <title>Sushi Expo Mairena</title>
+  <meta name="description"
+    content="El mejor sushi en Mairena del Aljarafe y Ciudad Expo. En Sushi Expo ofrecemos comida japonesa auténtica, sushi fresco y una experiencia única en el Aljarafe. ¡Ven a vernos!">
+  <title>Sushi en Mairena del Aljarafe | Sushi Expo - Comida Japonesa</title>
+
+  <!-- Google / Schema.org Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Sushi Mairena",
+      "image": "https://sushimairena.es/images/logo-sushi.jpeg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plaza de las Naciones, s/n, Local 13, Aljarafe Center",
+        "addressLocality": "Mairena del Aljarafe",
+        "addressRegion": "Sevilla",
+        "postalCode": "41927",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.3418,
+        "longitude": -6.0645
+      },
+      "url": "https://sushimairena.es",
+      "telephone": "+34955385911",
+      "servesCuisine": "Japanese, Sushi",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "13:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
+          "opens": "20:00",
+          "closes": "23:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday", "Saturday"],
+          "opens": "20:00",
+          "closes": "00:00"
+        }
+      ]
+    }
+  </script>
   <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1640,7 +1688,8 @@
 
   <!-- Loading -->
   <div id="loading">
-    <img src="./images/logo-sushi.jpeg" alt="Sushi Expo Mairena" class="ld-logo" id="ld-logo">
+    <img src="./images/logo-sushi.jpeg" alt="Sushi Mairena - Restaurante Japonés en Mairena del Aljarafe"
+      class="ld-logo" id="ld-logo">
     <div class="ld-track">
       <div class="ld-bar" id="ld-bar"></div>
     </div>
@@ -1649,7 +1698,7 @@
 
   <!-- Nav -->
   <nav id="nav">
-    <span class="nav-brand">Sushi<em>Expo</em></span>
+    <a href="/" class="nav-brand">Sushi<em>Mairena</em></a>
     <ul class="nav-links">
       <li><a href="#danza">Carta</a></li>
       <li><a href="#local">El Local</a></li>
@@ -1678,9 +1727,9 @@
       <p class="hero-eye">Mairena del Aljarafe &nbsp;·&nbsp; Sevilla</p>
 
       <!-- Line-reveal (ReactBits SplitText) -->
-      <h1 class="hero-title" aria-label="Mairena. Japón. Un bocado.">
-        <span class="line-wrap"><span class="line">Mairena. Japón.</span></span>
-        <span class="line-wrap"><span class="line accent gradient-text">Un bocado.</span></span>
+      <h1 class="hero-title" aria-label="sushimairena.es - El mejor sushi de Mairena">
+        <span class="line-wrap"><span class="line">Sushi en</span></span>
+        <span class="line-wrap"><span class="line accent gradient-text">Mairena.</span></span>
       </h1>
 
       <!-- AnimatedBorder + CTA (ReactBits) -->
@@ -1736,9 +1785,10 @@
     </div>
     <div class="section-head">
       <span class="eyebrow">Nuestra Selección</span>
-      <h2 class="sec-title">La precisión se encuentra<br>con la frescura</h2>
+      <h2 class="sec-title">Comida Japonesa en<br>Mairena del Aljarafe</h2>
       <p class="sec-sub blur-text"
-        aria-label="Cada pieza nace del equilibrio entre tradición japonesa y producto andaluz de primera calidad.">Cada pieza nace del equilibrio entre tradición japonesa y producto andaluz de primera calidad.</p>
+        aria-label="Cada pieza nace del equilibrio entre tradición japonesa y producto andaluz de primera calidad.">Cada
+        pieza nace del equilibrio entre tradición japonesa y producto andaluz de primera calidad.</p>
     </div>
 
     <div class="dishes">
@@ -1805,10 +1855,11 @@
       <article class="dish-card">
         <div class="glare-overlay" aria-hidden="true"></div>
         <img class="dish-img" src="./images/cerveza asahi mairena.jpeg"
-          alt="La experiencia completa en Sushi Expo Mairena" loading="lazy" style="object-position:center top">
+          alt="Cerveza Asahi y Sushi en Mairena del Aljarafe - Sushi Expo" loading="lazy"
+          style="object-position:center top">
         <div class="dish-body">
           <p class="dish-cat">La Experiencia</p>
-          <h3 class="dish-name">Sushi Expo Mairena</h3>
+          <h3 class="dish-name">Sushi Expo</h3>
           <p class="dish-desc">Pokes, makis, cerveza Asahi — Ven a descubrir la auténtica
             fusión japonesa en Mairena del Aljarafe.</p>
         </div>
@@ -1847,16 +1898,15 @@
     </div>
     <div class="venue-card" id="venue-card">
       <div id="venue-wrap">
-        <img class="venue-slide" src="./images/frontal local.png" alt="Frontal del local Sushi Expo Mairena"
+        <img class="venue-slide" src="./images/frontal local.png" alt="Frontal del local Sushi Mairena" loading="lazy">
+        <img class="venue-slide" src="./images/local-interior.jpeg" alt="Interior del local Sushi Mairena"
           loading="lazy">
-        <img class="venue-slide" src="./images/local-interior.jpeg" alt="Interior del local Sushi Expo Mairena"
-          loading="lazy">
-        <img class="venue-slide" src="./images/sushi-mairena.jpeg" alt="Detalle Sushi Expo Mairena" loading="lazy">
+        <img class="venue-slide" src="./images/sushi-mairena.jpeg" alt="Detalle Sushi Mairena" loading="lazy">
       </div>
       <div class="venue-body">
         <span class="eyebrow">Mairena del Aljarafe · Sevilla</span>
         <h2>Un espacio diseñado<br>para la experiencia</h2>
-        <p>Ambiente íntimo, iluminación cuidada y el sonido suave del ritual japonés. Cada detalle de Sushi Expo Mairena
+        <p>Ambiente íntimo, iluminación cuidada y el sonido suave del ritual japonés. Cada detalle de Sushi Mairena
           está pensado para que el tiempo se detenga y solo exista el sabor.</p>
         <div class="tags">
           <span class="tag">Terraza exterior</span>
@@ -1928,7 +1978,7 @@
     <!-- Sistema de Fidelización -->
     <div class="loyalty-box" id="fidelizacion">
       <div class="loyalty-qr" onclick="document.getElementById('qrModal').style.display='flex'">
-        <img src="./images/qr-sushi.png" alt="QR Fidelización Sushi Expo">
+        <img src="./images/qr-sushi.png" alt="Club de Fidelización - Sushi Mairena">
       </div>
       <div class="loyalty-content">
         <h3>Únete a nuestro Club de Fidelización</h3>
@@ -1949,7 +1999,9 @@
     <div class="ft-inner">
       <div class="ft-grid">
         <div>
-          <div class="ft-logo-wrap"><img src="./images/logo-sushi.jpeg" alt="Sushi Expo Mairena" id="ft-logo"></div>
+          <div class="ft-logo-wrap"><img src="./images/logo-sushi.jpeg" alt="Sushi En Mairena - Sushi en Ciudad Expo"
+              id="ft-logo">
+          </div>
           <p class="ft-tag">Precisión japonesa. Producto andaluz. Mairena del Aljarafe.</p>
         </div>
         <div class="ft-col">
@@ -1990,7 +2042,7 @@
         </div>
       </div>
       <div class="ft-bottom">
-        <p>© 2026 Sushi Expo Mairena · Todos los derechos reservados · Hecho por <a href="https://ingenialitics.com"
+        <p>© 2026 Sushi Mairena · Todos los derechos reservados · Hecho por <a href="https://ingenialitics.com"
             class="ingenialitics-link" target="_blank" rel="noopener">Ingenialitics</a></p>
         <div class="socials">
           <a href="https://www.instagram.com/sushiexpo.sevilla/" aria-label="Instagram"><svg fill="none"
