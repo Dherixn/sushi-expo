@@ -1728,8 +1728,8 @@
 
       <!-- Line-reveal (ReactBits SplitText) -->
       <h1 class="hero-title" aria-label="sushimairena.es - El mejor sushi de Mairena">
-        <span class="line-wrap"><span class="line">Sushi en</span></span>
-        <span class="line-wrap"><span class="line accent gradient-text">Mairena.</span></span>
+        <span class="line-wrap"><span class="line">Mairena, Japón</span></span>
+        <span class="line-wrap"><span class="line accent gradient-text">Un bocado.</span></span>
       </h1>
 
       <!-- AnimatedBorder + CTA (ReactBits) -->
@@ -1787,8 +1787,7 @@
       <span class="eyebrow">Nuestra Selección</span>
       <h2 class="sec-title">Comida Japonesa en<br>Mairena del Aljarafe</h2>
       <p class="sec-sub blur-text"
-        aria-label="Cada pieza nace del equilibrio entre tradición japonesa y producto andaluz de primera calidad.">Cada
-        pieza nace del equilibrio entre tradición japonesa y producto andaluz de primera calidad.</p>
+        aria-label="Cada pieza nace del equilibrio entre tradición japonesa y producto andaluz de primera calidad.">Cada pieza nace del equilibrio entre tradición japonesa y producto andaluz de primera calidad.</p>
     </div>
 
     <div class="dishes">
@@ -1906,7 +1905,7 @@
       <div class="venue-body">
         <span class="eyebrow">Mairena del Aljarafe · Sevilla</span>
         <h2>Un espacio diseñado<br>para la experiencia</h2>
-        <p>Ambiente íntimo, iluminación cuidada y el sonido suave del ritual japonés. Cada detalle de Sushi Mairena
+        <p>Ambiente íntimo, iluminación cuidada y el sonido suave del ritual japonés. Cada detalle de Sushi Expo
           está pensado para que el tiempo se detenga y solo exista el sabor.</p>
         <div class="tags">
           <span class="tag">Terraza exterior</span>
@@ -2248,7 +2247,7 @@
 
       /* ── Blur Text — ReactBits BlurText ── */
       document.querySelectorAll('.blur-text').forEach(el => {
-        const words = el.textContent.trim().split(' ');
+        const words = el.textContent.trim().split(/\s+/);
         el.innerHTML = words.map(w =>
           `<span style="display:inline-block;margin-right:.22em">${[...w].map(c =>
             `<span class="blur-char">${c}</span>`
