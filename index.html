@@ -1428,6 +1428,87 @@
         opacity: 1;
       }
     }
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE — ≤ 767px
+    ═══════════════════════════════════════════════════ */
+    @media(max-width:767px){
+      /* Restore cursor on touch devices */
+      .btn-cta{cursor:pointer}
+
+      /* Hero */
+      .hero-title{font-size:clamp(2.1rem,9.5vw,4rem)}
+      .hero-content{padding:0 1.3rem 6vh}
+
+      /* Section padding */
+      #danza{padding:4rem 1.2rem 5rem}
+      #local{padding:4rem 1.2rem 5rem}
+      footer{padding:3.5rem 1.2rem 2rem}
+      #stats{padding:0 1.2rem 4rem}
+
+      /* Stats — apilados en una columna, layout horizontal por ítem */
+      .stats-inner{
+        grid-template-columns:1fr;
+        border-radius:6px
+      }
+      .stat-item{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:1.3rem 1.6rem;
+        text-align:left
+      }
+      /* Divider horizontal entre ítems en lugar de vertical */
+      .stat-item+.stat-item::before{
+        top:0;bottom:auto;
+        left:0;right:0;
+        width:100%;height:1px
+      }
+      .stat-num{font-size:2rem;margin-bottom:0;line-height:1}
+      .stat-label{text-align:right;letter-spacing:.2em}
+
+      /* Venue body */
+      .venue-body{padding:1.5rem 1.4rem 1.8rem}
+      .venue-body h2{font-size:clamp(1.4rem,5vw,2rem)}
+      .venue-body p{font-size:.85rem}
+      .tags{gap:.4rem;margin-top:1.3rem}
+
+      /* Dish cards */
+      .dishes{gap:1rem}
+      .dish-body{padding:.95rem 1rem 1.1rem}
+      .dish-name{font-size:.97rem}
+      .dish-desc{font-size:.74rem}
+
+      /* Section headings */
+      .section-head{margin-bottom:3rem}
+      .sec-title{font-size:clamp(1.55rem,5vw,2.4rem)}
+
+      /* Footer */
+      .ft-col h4{margin-bottom:1rem}
+      .ft-col ul{gap:.7rem}
+      .ft-col ul li{font-size:.8rem}
+    }
+
+    /* ═══════════════════════════════════════════════════
+       SMALL PHONES — ≤ 390px (iPhone SE, 12 mini)
+    ═══════════════════════════════════════════════════ */
+    @media(max-width:390px){
+      .hero-title{font-size:clamp(1.85rem,9vw,2.8rem)}
+      .hero-eye{font-size:.62rem;letter-spacing:.28em}
+      .btn-cta{padding:.8rem 1.6rem;font-size:.77rem}
+
+      #danza{padding:3.5rem 1rem 4.5rem}
+      #local{padding:3.5rem 1rem 4.5rem}
+      #stats{padding:0 1rem 3.5rem}
+
+      .dishes{gap:.85rem}
+      .stat-item{padding:1.1rem 1.3rem}
+      .stat-num{font-size:1.75rem}
+      .stat-label{font-size:.57rem;letter-spacing:.15em}
+
+      .venue-body{padding:1.3rem 1.2rem 1.5rem}
+      .tag{font-size:.64rem;padding:.28rem .7rem}
+    }
   </style>
 </head>
 
@@ -2099,7 +2180,6 @@
     );
     tex.colorSpace = THREE.SRGBColorSpace;
 
-    const aspect = 1; // se ajusta cuando carga la textura
     const plane = new THREE.Mesh(
       new THREE.PlaneGeometry(3.2, 3.2),
       new THREE.MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.05, side: THREE.DoubleSide })
@@ -2109,13 +2189,25 @@
     plane.position.set(0, 0.6, 0);
     scene.add(plane);
 
-    /* Ajustar aspect ratio real cuando carga la imagen */
+    /* ── Escala base: el plano siempre cabe en el frustum ── */
+    let baseScale = 1;
+    function fitPlane() {
+      const fovRad      = camera.fov * Math.PI / 180;
+      const visibleH    = 2 * Math.tan(fovRad / 2) * camera.position.z;
+      const visibleW    = visibleH * camera.aspect;
+      const planeW      = plane.geometry.parameters.width;
+      baseScale = Math.min(1, (visibleW * 0.88) / planeW);
+      plane.scale.setScalar(baseScale);
+    }
+
+    /* Ajustar aspect ratio real cuando carga la imagen y recalcular fit */
     tex.addEventListener !== undefined && (() => {
       const img = new Image();
       img.onload = () => {
         const r = img.naturalWidth / img.naturalHeight;
         plane.geometry.dispose();
         plane.geometry = new THREE.PlaneGeometry(3.2, 3.2 / r);
+        fitPlane();
       };
       img.src = './images/3d.png';
     })();
@@ -2157,8 +2249,8 @@
       /* float — amplitud reducida, período largo */
       plane.position.y = 0.6 + Math.sin(t * 0.45) * 0.055;
 
-      /* respiración en escala — apenas perceptible */
-      const breathe = 1 + Math.sin(t * 0.3) * 0.008;
+      /* respiración en escala — apenas perceptible, sobre la escala base */
+      const breathe = baseScale * (1 + Math.sin(t * 0.3) * 0.008);
       plane.scale.setScalar(breathe);
 
       /* lerp muy suave hacia el objetivo del ratón */
@@ -2189,6 +2281,7 @@
       camera.aspect = W() / H();
       camera.updateProjectionMatrix();
       renderer.setSize(W(), H());
+      fitPlane();
     }, { passive: true });
   </script>
 
