@@ -2580,6 +2580,15 @@
 
     #cookie-consent[hidden] { display: none; }
 
+    /* Restaura el cursor del sistema sobre el banner (la web usa cursor: none) */
+    #cookie-consent,
+    #cookie-consent .cc-panel,
+    #cookie-consent .cc-title,
+    #cookie-consent .cc-text { cursor: auto; }
+
+    #cookie-consent .cc-btn,
+    #cookie-consent .cc-text a { cursor: pointer; }
+
     @media (min-width: 768px) {
       #cookie-consent { left: auto; right: 1.6rem; bottom: 1.6rem; max-width: 30rem; }
     }
