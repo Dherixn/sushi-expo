@@ -1049,6 +1049,17 @@
       color: rgba(242, 242, 242, .5)
     }
 
+    .legal-link {
+      color: rgba(116, 166, 93, .65);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color .3s;
+    }
+
+    .legal-link:hover {
+      color: var(--orange);
+    }
+
     .ingenialitics-link {
       font-weight: 600;
       text-decoration: none;
@@ -2112,8 +2123,12 @@
           style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: center;">
           <p>© 2026 Sushi Mairena · Todos los derechos reservados · Hecho por <a href="https://ingenialitics.com"
               class="ingenialitics-link" target="_blank" rel="noopener">Ingenialitics</a></p>
-          <p><a href="./aviso-legal.html" class="legal-link"
-              style="color: rgba(242, 242, 242, .5); text-decoration: underline; font-size: .7rem;">Aviso Legal</a></p>
+          <p style="display: flex; gap: 1rem; align-items: center;">
+            <a href="./aviso-legal.html" class="legal-link"
+              style="color: rgba(242, 242, 242, .5); text-decoration: underline; font-size: .7rem;">Aviso Legal</a>
+            <a href="./politica-cookies.html" class="legal-link"
+              style="color: rgba(242, 242, 242, .5); text-decoration: underline; font-size: .7rem;">Política de Cookies</a>
+          </p>
         </div>
         <div class="socials">
           <a href="https://www.instagram.com/sushiexpo.sevilla/" aria-label="Instagram"><svg fill="none"
