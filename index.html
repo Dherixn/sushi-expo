@@ -1826,7 +1826,7 @@
         <span class="stat-label">Especialidades</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num" data-target="4.7" data-dec="1" data-suffix="★">4.7★</span>
+        <span class="stat-num" data-target="4.6" data-dec="1" data-suffix="★">4.7★</span>
         <span class="stat-label">Valoración media</span>
       </div>
       <div class="stat-item">
@@ -2043,7 +2043,9 @@
       <!-- Reseña 6 -->
       <article class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Hemos ido a probarlo hoy y nos ha sorprendido gratamente. El personal muy amable y el sitio muy tranquilo. Por no hablar de la calidad de la comida y la presentacion de los platos. Volveremos sin duda."</p>
+        <p class="review-text">"Hemos ido a probarlo hoy y nos ha sorprendido gratamente. El personal muy amable y el
+          sitio muy tranquilo. Por no hablar de la calidad de la comida y la presentacion de los platos. Volveremos sin
+          duda."</p>
         <span class="review-author">— MARÍA</span>
       </article>
     </div>
@@ -2127,7 +2129,8 @@
             <a href="./aviso-legal.html" class="legal-link"
               style="color: rgba(242, 242, 242, .5); text-decoration: underline; font-size: .7rem;">Aviso Legal</a>
             <a href="./politica-cookies.html" class="legal-link"
-              style="color: rgba(242, 242, 242, .5); text-decoration: underline; font-size: .7rem;">Política de Cookies</a>
+              style="color: rgba(242, 242, 242, .5); text-decoration: underline; font-size: .7rem;">Política de
+              Cookies</a>
           </p>
         </div>
         <div class="socials">
@@ -2578,19 +2581,30 @@
       font-family: var(--fb);
     }
 
-    #cookie-consent[hidden] { display: none; }
+    #cookie-consent[hidden] {
+      display: none;
+    }
 
     /* Restaura el cursor del sistema sobre el banner (la web usa cursor: none) */
     #cookie-consent,
     #cookie-consent .cc-panel,
     #cookie-consent .cc-title,
-    #cookie-consent .cc-text { cursor: auto; }
+    #cookie-consent .cc-text {
+      cursor: auto;
+    }
 
     #cookie-consent .cc-btn,
-    #cookie-consent .cc-text a { cursor: pointer; }
+    #cookie-consent .cc-text a {
+      cursor: pointer;
+    }
 
     @media (min-width: 768px) {
-      #cookie-consent { left: auto; right: 1.6rem; bottom: 1.6rem; max-width: 30rem; }
+      #cookie-consent {
+        left: auto;
+        right: 1.6rem;
+        bottom: 1.6rem;
+        max-width: 30rem;
+      }
     }
 
     #cookie-consent .cc-panel {
@@ -2613,7 +2627,10 @@
       transition: opacity .55s ease, transform .6s cubic-bezier(.16, 1, .3, 1);
     }
 
-    #cookie-consent.cc-show .cc-panel { opacity: 1; transform: none; }
+    #cookie-consent.cc-show .cc-panel {
+      opacity: 1;
+      transform: none;
+    }
 
     #cookie-consent .cc-icon {
       grid-row: span 2;
@@ -2626,7 +2643,10 @@
       background: color-mix(in srgb, var(--green) 15%, transparent);
     }
 
-    #cookie-consent .cc-icon svg { width: 21px; height: 21px; }
+    #cookie-consent .cc-icon svg {
+      width: 21px;
+      height: 21px;
+    }
 
     #cookie-consent .cc-title {
       margin: 0 0 .3rem;
@@ -2645,7 +2665,10 @@
       color: var(--cc-text-color);
     }
 
-    #cookie-consent .cc-text strong { color: var(--green); font-weight: 500; }
+    #cookie-consent .cc-text strong {
+      color: var(--green);
+      font-weight: 500;
+    }
 
     #cookie-consent .cc-text a {
       color: var(--cc-link);
@@ -2653,7 +2676,9 @@
       text-underline-offset: 2px;
     }
 
-    #cookie-consent .cc-text a:hover { opacity: .8; }
+    #cookie-consent .cc-text a:hover {
+      opacity: .8;
+    }
 
     #cookie-consent .cc-actions {
       grid-column: 1 / -1;
@@ -2681,7 +2706,9 @@
       color: var(--cc-reject-fg);
     }
 
-    #cookie-consent .cc-reject:hover { border-color: var(--cc-reject-fg); }
+    #cookie-consent .cc-reject:hover {
+      border-color: var(--cc-reject-fg);
+    }
 
     #cookie-consent .cc-accept {
       background: var(--green);
@@ -2689,27 +2716,46 @@
       box-shadow: 0 6px 18px color-mix(in srgb, var(--green) 38%, transparent);
     }
 
-    #cookie-consent .cc-accept:hover { transform: translateY(-1px); filter: brightness(1.07); }
+    #cookie-consent .cc-accept:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.07);
+    }
 
-    #cookie-consent .cc-btn:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+    #cookie-consent .cc-btn:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
+    }
 
-    @media (max-width: 430px) { #cookie-consent .cc-actions .cc-btn { flex: 1; } }
+    @media (max-width: 430px) {
+      #cookie-consent .cc-actions .cc-btn {
+        flex: 1;
+      }
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      #cookie-consent .cc-panel { transition: opacity .25s ease; transform: none; }
+      #cookie-consent .cc-panel {
+        transition: opacity .25s ease;
+        transform: none;
+      }
     }
   </style>
 
   <div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
     <div class="cc-panel">
       <span class="cc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2.05c-.34 0-.67.02-1 .06a3.2 3.2 0 0 1 2.2 4.49 3.2 3.2 0 0 0 3.92 4.2A9.96 9.96 0 1 1 12 2.05Z" />
-          <circle cx="8.5" cy="11" r="1" /><circle cx="12.5" cy="15" r="1" /><circle cx="16" cy="12.5" r="1" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path
+            d="M12 2.05c-.34 0-.67.02-1 .06a3.2 3.2 0 0 1 2.2 4.49 3.2 3.2 0 0 0 3.92 4.2A9.96 9.96 0 1 1 12 2.05Z" />
+          <circle cx="8.5" cy="11" r="1" />
+          <circle cx="12.5" cy="15" r="1" />
+          <circle cx="16" cy="12.5" r="1" />
         </svg>
       </span>
       <h3 class="cc-title">Cookies</h3>
-      <p class="cc-text">En <strong>Sushi Expo</strong> usamos solo cookies técnicas necesarias para que la web funcione. No empleamos cookies de publicidad ni de seguimiento. Más detalles en nuestra <a href="./politica-cookies.html">Política de Cookies</a>.</p>
+      <p class="cc-text">En <strong>Sushi Expo</strong> usamos solo cookies técnicas necesarias para que la web
+        funcione. No empleamos cookies de publicidad ni de seguimiento. Más detalles en nuestra <a
+          href="./politica-cookies.html">Política de Cookies</a>.</p>
       <div class="cc-actions">
         <button type="button" class="cc-btn cc-reject" id="cc-reject">Rechazar</button>
         <button type="button" class="cc-btn cc-accept" id="cc-accept">Aceptar</button>
